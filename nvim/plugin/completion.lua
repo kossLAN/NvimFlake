@@ -105,6 +105,7 @@ cmp.setup {
     -- The insertion order influences the priority of the sources
     { name = 'nvim_lsp', keyword_length = 3 },
     { name = 'nvim_lsp_signature_help', keyword_length = 3 },
+    { name = 'copilot' },
     { name = 'buffer' },
     { name = 'path' },
   },

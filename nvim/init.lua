@@ -44,6 +44,14 @@ opt.cmdheight = 0
 
 opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
+-- Restore cursor position
+vim.api.nvim_create_autocmd({ 'BufReadPost' }, {
+  pattern = { '*' },
+  callback = function()
+    vim.api.nvim_exec2('silent! normal! g`"zv', { output = false })
+  end,
+})
+
 -- Configure Neovim diagnostic messages
 
 local function prefix_diagnostic(prefix, diagnostic)
@@ -102,4 +110,4 @@ cmd.packadd('cfilter') -- Allows filtering the quickfix list with :cfdo
 vim.g.sqlite_clib_path = require('luv').os_getenv('LIBSQLITE')
 
 -- Vim Theme
-vim.cmd.colorscheme 'tokyonight-night'
+vim.cmd.colorscheme('tokyonight-night')

@@ -21,54 +21,6 @@ local layout_config = {
   },
 }
 
--- Fall back to find_files if not in a git repo
-local project_files = function()
-  local opts = {} -- define here if you want to define something
-  local ok = pcall(builtin.git_files, opts)
-  if not ok then
-    builtin.find_files(opts)
-  end
-end
-
----@param picker function the telescope picker to use
-local function grep_current_file_type(picker)
-  local current_file_ext = vim.fn.expand('%:e')
-  local additional_vimgrep_arguments = {}
-  if current_file_ext ~= '' then
-    additional_vimgrep_arguments = {
-      '--type',
-      current_file_ext,
-    }
-  end
-  local conf = require('telescope.config').values
-  picker {
-    vimgrep_arguments = vim.tbl_flatten {
-      conf.vimgrep_arguments,
-      additional_vimgrep_arguments,
-    },
-  }
-end
-
---- Grep the string under the cursor, filtering for the current file type
-local function grep_string_current_file_type()
-  grep_current_file_type(builtin.grep_string)
-end
-
---- Live grep, filtering for the current file type
-local function live_grep_current_file_type()
-  grep_current_file_type(builtin.live_grep)
-end
-
---- Like live_grep, but fuzzy (and slower)
-local function fuzzy_grep(opts)
-  opts = vim.tbl_extend('error', opts or {}, { search = '', prompt_title = 'Fuzzy grep' })
-  builtin.grep_string(opts)
-end
-
-local function fuzzy_grep_current_file_type()
-  grep_current_file_type(fuzzy_grep)
-end
-
 vim.keymap.set('n', '<leader>tp', function()
   builtin.find_files()
 end, { desc = '[t]elescope find files - ctrl[p] style' })
@@ -82,7 +34,6 @@ vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iag
 vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
 vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
-
 
 telescope.setup {
   defaults = {

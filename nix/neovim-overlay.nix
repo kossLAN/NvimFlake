@@ -86,6 +86,13 @@ with final.pkgs.lib; let
     tokyonight-nvim
     # QOL Plugin for visuals mostly
     mini-nvim # https://github.com/echasnovski/mini.nvim/
+    # Debugging
+    nvim-dap
+
+    # Copilot related plugins
+    CopilotChat-nvim
+    copilot-cmp
+    copilot-lua
   ];
 
   extraPackages = with pkgs; [
@@ -99,6 +106,9 @@ with final.pkgs.lib; let
     alejandra # amazing nix autoformatter
     stylua # lua formatter
     google-java-format # java formatter based off google guidelines
+
+    # misc
+    nodejs # eww
   ];
 in {
   # This is the neovim derivation
