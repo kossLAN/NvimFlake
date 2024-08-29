@@ -99,7 +99,7 @@ with final.pkgs.lib; let
     # language servers, etc.
     lua-language-server
     clang-tools # provides clangd which is a c/c++ lsp
-    gcc
+    java-language-server
     nil # nix LSP
 
     # autoformatters
@@ -109,6 +109,7 @@ with final.pkgs.lib; let
 
     # misc
     nodejs # eww
+    gcc
   ];
 in {
   # This is the neovim derivation
