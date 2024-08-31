@@ -5,8 +5,6 @@ end
 
 local root_files = {
   'flake.nix',
-  'default.nix',
-  'shell.nix',
   '.git',
 }
 
