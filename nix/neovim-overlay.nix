@@ -100,7 +100,7 @@ with final.pkgs.lib; let
     lua-language-server
     clang-tools # provides clangd which is a c/c++ lsp
     jdt-language-server # java ls
-    nil # nix LSP
+    nixd # nix LSP
 
     # autoformatters
     alejandra # amazing nix autoformatter
