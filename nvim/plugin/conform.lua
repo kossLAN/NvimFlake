@@ -1,8 +1,8 @@
-require("conform").setup({
+require('conform').setup {
   formatters_by_ft = {
-    lua = { "stylua" },
-    nix = { "alejandra" },
-    java = { "google-java-format" },
+    lua = { 'stylua' },
+    nix = { 'alejandra' },
+    -- java = { "google-java-format" },
     -- Conform will run multiple formatters sequentially
     -- python = { "isort", "black" },
     -- You can customize some of the format options for the filetype (:help conform.format)
@@ -13,6 +13,6 @@ require("conform").setup({
   format_on_save = {
     -- These options will be passed to conform.format()
     timeout_ms = 500,
-    lsp_format = "fallback",
+    lsp_format = 'fallback',
   },
-})
+}
