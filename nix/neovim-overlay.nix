@@ -105,7 +105,7 @@ with final.pkgs.lib; let
     # autoformatters
     alejandra # amazing nix autoformatter
     stylua # lua formatter
-    google-java-format # java formatter based off google guidelines
+    # google-java-format # java formatter based off google guidelines
 
     # misc
     nodejs # eww
