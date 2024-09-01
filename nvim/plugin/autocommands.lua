@@ -24,6 +24,14 @@ api.nvim_create_autocmd('TermOpen', {
   end,
 })
 
+-- Restore cursor position
+vim.api.nvim_create_autocmd({ 'BufReadPost' }, {
+  pattern = { '*' },
+  callback = function()
+    vim.api.nvim_exec2('silent! normal! g`"zv', { output = false })
+  end,
+})
+
 -- LSP
 local keymap = vim.keymap
 

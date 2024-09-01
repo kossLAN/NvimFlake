@@ -7,6 +7,8 @@ local g = vim.g
 g.mapleader = ' '
 g.maplocalleader = ' '
 
+vim.cmd('let g:telescope_debug = 1')
+
 opt.compatible = false
 
 -- Enable true colour support
@@ -31,9 +33,9 @@ opt.spell = true
 opt.spelllang = 'en'
 
 opt.expandtab = true
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.shiftwidth = 2
 opt.foldenable = true
 opt.history = 2000
 opt.nrformats = 'bin,hex' -- 'octal'
@@ -43,14 +45,6 @@ opt.splitbelow = true
 opt.cmdheight = 0
 
 opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-
--- Restore cursor position
-vim.api.nvim_create_autocmd({ 'BufReadPost' }, {
-  pattern = { '*' },
-  callback = function()
-    vim.api.nvim_exec2('silent! normal! g`"zv', { output = false })
-  end,
-})
 
 -- Configure Neovim diagnostic messages
 

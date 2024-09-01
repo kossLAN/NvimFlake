@@ -2,7 +2,7 @@ require('which-key').setup()
 -- local whichkey = require('which-key')
 --
 -- whichkey.setup()
-
+--
 -- whichkey.add {
 --   { '<leader>c', group = '[C]ode' },
 --   { '<leader>d', group = '[D]ocument' },

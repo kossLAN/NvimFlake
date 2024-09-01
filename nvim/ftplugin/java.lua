@@ -8,6 +8,11 @@ local root_files = {
   'Main.java',
 }
 
+-- Tab Width
+vim.bo.tabstop = 4
+vim.bo.shiftwidth = 4
+vim.bo.expandtab = true
+
 vim.lsp.start {
   name = 'jdtls',
   cmd = { 'jdtls' },
