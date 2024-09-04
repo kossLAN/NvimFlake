@@ -153,16 +153,3 @@ in the `mkNeovim` function.
 
 [^3]: Assuming Linux. Refer to `:h initialization` for Darwin.
 
-<!-- MARKDOWN LINKS & IMAGES -->
-[neovim-shield]: https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white
-[neovim-url]: https://neovim.io/
-[nix-shield]: https://img.shields.io/badge/nix-0175C2?style=for-the-badge&logo=NixOS&logoColor=white
-[nix-url]: https://nixos.org/
-[lua-shield]: https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white
-[lua-url]: https://www.lua.org/
-[license-shield]: https://img.shields.io/github/license/nix-community/kickstart-nix.nvim.svg?style=for-the-badge
-[license-url]: https://github.com/nix-community/kickstart-nix.nvim/blob/master/LICENSE
-[issues-shield]: https://img.shields.io/github/issues/nix-community/kickstart-nix.nvim.svg?style=for-the-badge
-[issues-url]: https://github.com/nix-community/kickstart-nix.nvim/issues
-[license-shield]: https://img.shields.io/github/license/nix-community/kickstart-nix.nvim.svg?style=for-the-badge
-[license-url]: https://github.com/nix-community/kickstart-nix.nvim/blob/master/LICENSE
