@@ -10,6 +10,6 @@ require('copilot').setup {
   panel = { enabled = false },
   filetypes = {
     ['java'] = true,
-    -- ['*'] = false,
+    ['*'] = false,
   },
 }
