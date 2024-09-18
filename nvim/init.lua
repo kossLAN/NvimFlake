@@ -46,6 +46,11 @@ opt.cmdheight = 0
 
 opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
+-- Sync clipboard with system
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+end)
+
 -- Configure Neovim diagnostic messages
 
 local function prefix_diagnostic(prefix, diagnostic)
