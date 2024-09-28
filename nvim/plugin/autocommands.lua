@@ -15,15 +15,6 @@ api.nvim_create_autocmd('BufWritePre', {
   end,
 })
 
--- Disable spell checking in terminal buffers
-local nospell_group = api.nvim_create_augroup('nospell', { clear = true })
-api.nvim_create_autocmd('TermOpen', {
-  group = nospell_group,
-  callback = function()
-    vim.wo[0].spell = false
-  end,
-})
-
 -- Restore cursor position
 vim.api.nvim_create_autocmd({ 'BufReadPost' }, {
   pattern = { '*' },
