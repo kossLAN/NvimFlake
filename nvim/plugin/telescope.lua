@@ -5,6 +5,7 @@ vim.g.did_load_telescope_plugin = true
 
 local telescope = require('telescope')
 local actions = require('telescope.actions')
+local action_state = require('telescope.actions.state')
 
 local builtin = require('telescope.builtin')
 
@@ -43,6 +44,18 @@ telescope.setup {
         -- ['<esc>'] = actions.close,
         ['<C-s>'] = actions.cycle_previewers_next,
         ['<C-a>'] = actions.cycle_previewers_prev,
+
+        -- Multi File select
+        ['<CR>'] = function(pb)
+          local picker = action_state.get_current_picker(pb)
+          local multi = picker:get_multi_selection()
+          actions.select_default(pb) -- the normal enter behaviour
+          for _, j in pairs(multi) do
+            if j.path ~= nil then -- is it a file -> open it as well:
+              vim.cmd(string.format('%s %s', 'edit', j.path))
+            end
+          end
+        end,
       },
       n = {
         q = actions.close,
