@@ -109,4 +109,5 @@ cmd.packadd('cfilter') -- Allows filtering the quickfix list with :cfdo
 vim.g.sqlite_clib_path = require('luv').os_getenv('LIBSQLITE')
 
 -- Vim Theme
-vim.cmd.colorscheme('tokyonight-night')
+vim.g.everforest_background = 'hard'
+vim.cmd.colorscheme('everforest')

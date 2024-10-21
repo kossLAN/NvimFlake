@@ -82,11 +82,14 @@ with final.pkgs.lib; let
     # Autoformatting
     conform-nvim
     # Theme for neovim
-    tokyonight-nvim
+    everforest
     # QOL Plugin for visuals mostly
     mini-nvim # https://github.com/echasnovski/mini.nvim/
     # Debugging
     nvim-dap
+    # Notifications
+    nvim-notify
+    fidget-nvim
 
     # Copilot related plugins
     CopilotChat-nvim
@@ -100,10 +103,12 @@ with final.pkgs.lib; let
     clang-tools # provides clangd which is a c/c++ lsp
     jdt-language-server # java ls
     nixd # nix LSP
+    rust-analyzer # rust LSP
 
     # autoformatters
     alejandra # amazing nix autoformatter
     stylua # lua formatter
+    rustfmt # rust formatter
     # google-java-format # java formatter based off google guidelines
 
     # misc
