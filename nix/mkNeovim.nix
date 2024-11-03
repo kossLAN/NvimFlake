@@ -205,4 +205,8 @@ with lib;
         + lib.optionalString isCustomAppName ''
           mv $out/bin/nvim $out/bin/${lib.escapeShellArg appName}
         '';
+      meta.mainProgram =
+        if isCustomAppName
+        then appName
+        else oa.meta.mainProgram;
     })
