@@ -104,11 +104,14 @@ with final.pkgs.lib; let
     jdt-language-server # java ls
     nixd # nix LSP
     rust-analyzer # rust LSP
+    vscode-langservers-extracted # various web dev lsps from vscode
+    typescript-language-server # css lsp thing
 
     # autoformatters
     alejandra # amazing nix autoformatter
     stylua # lua formatter
     rustfmt # rust formatter
+    prettierd # typescript/javascript formatter
     # google-java-format # java formatter based off google guidelines
 
     # misc

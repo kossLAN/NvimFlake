@@ -3,6 +3,7 @@ require('conform').setup {
     lua = { 'stylua' },
     nix = { 'alejandra' },
     rust = { 'rustfmt' },
+    typescript = { 'prettierd' },
     -- Conform will run multiple formatters sequentially
     -- python = { "isort", "black" },
     -- You can customize some of the format options for the filetype (:help conform.format)
